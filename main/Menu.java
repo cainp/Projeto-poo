@@ -118,15 +118,15 @@ public class Menu implements MenuInterface {
             System.out.print("Endereço: ");
             String endereco = scanner.nextLine();
 
-            System.out.println("Dados do Responsável:");
+            System.out.println("Dados do Responsável- ");
 
             System.out.print("Nome do Responsável: ");
             String nomeResponsavel = scanner.nextLine();
 
-            System.out.println("CPF do Responsável: ");
+            System.out.print("CPF do Responsável: ");
             String cpfResponsavel = scanner.nextLine();
 
-            System.out.println("Telefone para contato do responsável: ");
+            System.out.print("Telefone para contato do responsável: ");
             String numeroContato = scanner.nextLine();
 
             if (nome.isEmpty() || serie.isEmpty() || idadeStr.isEmpty() || dataNascimento.isEmpty() || endereco.isEmpty() || nomeResponsavel.isEmpty() || cpfResponsavel.isEmpty() || numeroContato.isEmpty()) {
