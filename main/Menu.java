@@ -63,7 +63,13 @@ public class Menu implements MenuInterface {
                 case 1:
                     try {
                         realizarMatricula();
-                    } catch (Exception e) {
+                    } catch (CampoNuloOuVazioException  e) {
+                        System.out.println(e.getMessage());
+                    } catch (IdadeInvalidaException e) {
+                        System.out.println(e.getMessage());
+                    } catch (NomeInvalidoException e) {
+                        System.out.println(e.getMessage());
+                    } catch (DataInvalidaException e) {
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -123,8 +129,8 @@ public class Menu implements MenuInterface {
             System.out.println("Telefone para contato do responsável: ");
             String numeroContato = scanner.nextLine();
 
-            if (nome.isEmpty() || serie.isEmpty() || idadeStr.isEmpty() || dataNascimento.isEmpty() || endereco.isEmpty()) {
-                throw new CampoNuloOuVazioException(nome.isEmpty() ? "nome" : serie.isEmpty() ? "serie" : idadeStr.isEmpty() ? "idade" : dataNascimento.isEmpty() ? "dataNascimento" : "endereco");
+            if (nome.isEmpty() || serie.isEmpty() || idadeStr.isEmpty() || dataNascimento.isEmpty() || endereco.isEmpty() || nomeResponsavel.isEmpty() || cpfResponsavel.isEmpty() || numeroContato.isEmpty()) {
+                throw new CampoNuloOuVazioException(nome.isEmpty() ? "nome" : serie.isEmpty() ? "serie" : idadeStr.isEmpty() ? "idade" : dataNascimento.isEmpty() ? "dataNascimento" : endereco.isEmpty() ? "endereco" : nomeResponsavel.isEmpty() ? "nomeResponsavel" : cpfResponsavel.isEmpty() ? "cpfResponsavel" : "numeroContato");
             }
 
             int idade;
